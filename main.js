@@ -22,7 +22,6 @@ function start() {
 function modelLoaded() {
   console.log("Model Loaded!")
   status = true;
-  objectDetector.detect(video, gotResult);
 }
  
 function gotResult(error, results) {
@@ -41,10 +40,10 @@ function draw() {
       r = random(255);
       g = random(255);
       b = random(255);
-      obectDetector.detect(video, gotResult);
+      objectDetector.detect(video, gotResult);
       for (i = 0; i < objects.length; i++) {
          document.getElementById("status").innerHTML = "Status : Object Detected";
-         document.getElementById("number_of_objects").innerHTML = "Number of objects detected are: "+object.length;
+         document.getElementById("number_of_objects").innerHTML = "Number of Objects detected are: "+objects.length;
 
          fill(r,g,b);
          percent = floor(objects[i].confidence * 100);
